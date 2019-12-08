@@ -6,7 +6,8 @@ use math::round;
 
 #[cfg(test)]
 mod calculate_tests {
-    use super::{calculate_fuel, calculate_module_fuel};
+    use super::{calculate_fuel, calculate_module_fuel, run};
+
 
     #[test]
     fn test_fuel_mass_12() {
@@ -15,12 +16,14 @@ mod calculate_tests {
         );
     }
 
+
     #[test]
     fn test_fuel_mass_14() {
         assert_eq!(
             2, calculate_fuel(14)
         );
     }
+
 
     #[test]
     fn test_fuel_mass_1969() {
@@ -29,12 +32,14 @@ mod calculate_tests {
         );
     }
 
+
     #[test]
     fn test_fuel_mass_100756() {
         assert_eq!(
             33583, calculate_fuel(100756)
         );
     }
+
 
     #[test]
     fn test_fuel_module_12() {
@@ -43,12 +48,14 @@ mod calculate_tests {
         );
     }
 
+
     #[test]
     fn test_fuel_module_14() {
         assert_eq!(
             2, calculate_module_fuel(14)
         );
     }
+
 
     #[test]
     fn test_fuel_module_1969() {
@@ -57,10 +64,19 @@ mod calculate_tests {
         );
     }
 
+
     #[test]
     fn test_fuel_module_100756() {
         assert_eq!(
             50346, calculate_module_fuel(100756)
+        );
+    }
+
+
+    #[test]
+    fn test_run() {
+        assert_eq!(
+            4992008, run().unwrap()
         );
     }
 }
