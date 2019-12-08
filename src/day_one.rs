@@ -103,7 +103,7 @@ fn calculate_module_fuel(mass: i64) -> i64 {
 }
 
 
-pub fn calculate_fuel_required() -> Result<i64, Error> {
+pub fn run() -> Result<i64, Error> {
     let filename = "input/day_one.txt";
     let masses = read_masses(&filename)?;
     let mut fuel = 0;
