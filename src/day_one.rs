@@ -67,7 +67,7 @@ mod calculate_tests {
 
 
 fn read_masses(filename: &str) -> Result<Vec<i64>, Error> {
-    let file = File::open(filename).unwrap();
+    let file = File::open(filename)?;
     let reader = BufReader::new(file);
     let mut masses = Vec::new();
 
@@ -105,7 +105,7 @@ fn calculate_module_fuel(mass: i64) -> i64 {
 
 pub fn calculate_fuel_required() -> Result<i64, Error> {
     let filename = "input/day_one.txt";
-    let masses = read_masses(&filename).unwrap();
+    let masses = read_masses(&filename)?;
     let mut fuel = 0;
 
     for mass in masses {
