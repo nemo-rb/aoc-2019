@@ -1,8 +1,6 @@
 use std::fs::File;
 use std::io::{BufRead, BufReader, Error, ErrorKind};
 
-use math::round;
-
 
 #[cfg(test)]
 mod calculate_tests {
@@ -99,7 +97,7 @@ fn read_masses(filename: &str) -> Result<Vec<i64>, Error> {
 
 fn calculate_fuel(mass: i64) -> i64 {
     let _mass = mass as f64;
-    let fuel = (round::floor(_mass / 3.0, 0) - 2.0) as i64;
+    let fuel = ((_mass / 3.0) - 2.0).floor() as i64;
 
     if fuel <= 0 {
         return 0;

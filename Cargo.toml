@@ -9,4 +9,3 @@ edition = "2018"
 [dependencies]
 env_logger = "0.6"
 log = "0.4.6"
-libmath = "0.1.4"
