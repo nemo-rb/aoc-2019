@@ -8,7 +8,7 @@ mod intcode_tests {
 
 
     #[test]
-    fn test_incode_one() {
+    fn test_intcode_one() {
         assert_eq!(
             vec![2, 0, 0, 0, 99], run_intcode(&vec![1, 0, 0, 0, 99])
         );
@@ -16,7 +16,7 @@ mod intcode_tests {
 
 
     #[test]
-    fn test_incode_two() {
+    fn test_intcode_two() {
         assert_eq!(
             vec![2, 3, 0, 6, 99], run_intcode(&vec![2, 3, 0, 3, 99])
         );
@@ -24,7 +24,7 @@ mod intcode_tests {
 
 
     #[test]
-    fn test_incode_three() {
+    fn test_intcode_three() {
         assert_eq!(
             vec![2, 4, 4, 5, 99, 9801], run_intcode(&vec![2, 4, 4, 5, 99, 0])
         );
@@ -32,7 +32,7 @@ mod intcode_tests {
 
 
     #[test]
-    fn test_incode_four() {
+    fn test_intcode_four() {
         assert_eq!(
             vec![30, 1, 1, 4, 2, 5, 6, 0, 99], run_intcode(&vec![1,1,1,4,99,5,6,0,99])
         );
