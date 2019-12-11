@@ -1,5 +1,4 @@
-fn main() -> Result<(), std::io::Error> {
+fn main() {
     env_logger::init();
-    aoc_2019::run().expect("Failed to run Advent Of Code");
-    Ok(())
+    aoc_2019::run();
 }
