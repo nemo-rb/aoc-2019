@@ -64,8 +64,8 @@ pub fn run_2() ->  Option<i64> {
 
     for i in 0..99 {
         for j in 0..99 {
-            if run_program(i, j, "input/day_two.txt").unwrap() == 19690720 {
-                 result = Some(19690720);
+            if run_program(i, j, "input/day_two.txt").unwrap() == 19_690_720 {
+                 result = Some(19_690_720);
                  break;
             }
         }
@@ -110,7 +110,7 @@ fn read_opcodes(filename: &str) -> Result<Vec<i64>, Error> {
 }
 
 
-fn run_intcode(opcodes: &Vec<i64>) -> Vec<i64> {
+fn run_intcode(opcodes: &[i64]) -> Vec<i64> {
 
     let mut working = opcodes.to_vec();
 
