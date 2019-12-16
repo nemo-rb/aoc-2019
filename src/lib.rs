@@ -27,4 +27,6 @@ pub fn run() {
     info!("4-2 result {}", day_four_result_2);
     let day_five_result_1 = day_five::run_1().unwrap();
     info!("5-1 result {}", day_five_result_1);
+    let day_five_result_2 = day_five::run_2().unwrap();
+    info!("5-2 result {}", day_five_result_2);
 }
