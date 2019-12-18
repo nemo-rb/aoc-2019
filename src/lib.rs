@@ -32,6 +32,6 @@ pub fn run() {
     info!("5-2 result {}", day_five_result_2);
     let day_six_result_1 = day_six::run_1();
     info!("6-1 result {:?}", day_six_result_1);
-    //let day_six_result_2 = day_six::run_2().unwrap();
-    //info!("6-2 result {}", day_six_result_2);
+    let day_six_result_2 = day_six::run_2();
+    info!("6-2 result {}", day_six_result_2);
 }
