@@ -64,6 +64,13 @@ mod test_six {
             249_308, run_1()
         )
     }
+
+    #[test]
+    fn test_run_2() {
+        assert_eq!(
+            349, run_2()
+        )
+    }
 }
 
 
