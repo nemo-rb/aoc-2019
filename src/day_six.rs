@@ -7,7 +7,7 @@ use itertools::Itertools;
 
 #[cfg(test)]
 mod test_six {
-    use super::{run_1, calculate_orbits, find_orbit, find_lco, Itertools, calculate_orbital_transfers};
+    use super::{run_1, calculate_orbits, find_orbit, find_lco, Itertools, calculate_orbital_transfers, run_2};
 
 
     #[test]
