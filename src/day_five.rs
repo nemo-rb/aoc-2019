@@ -97,7 +97,7 @@ pub fn run_2() ->  Option<i64> {
 }
 
 
-pub fn run_program(filename: &str) ->  Result<i64, Error> {
+fn run_program(filename: &str) ->  Result<i64, Error> {
     let opcodes = read_opcodes(&filename).unwrap();
     let working = run_intcode(&opcodes);
 
@@ -121,6 +121,7 @@ fn read_opcodes(filename: &str) -> Result<Vec<i64>, Error> {
 
     Ok(opcodes)
 }
+
 
 fn run_intcode(opcodes: &[i64]) -> Vec<i64> {
     let mut working = opcodes.to_vec();
