@@ -7,6 +7,8 @@ mod day_three;
 mod day_four;
 mod day_five;
 mod day_six;
+mod day_seven;
+
 
 
 pub fn run() {
@@ -34,4 +36,6 @@ pub fn run() {
     info!("6-1 result {:?}", day_six_result_1);
     let day_six_result_2 = day_six::run_2();
     info!("6-2 result {}", day_six_result_2);
+    let day_seven_result_1 = day_seven::run_1();
+    info!("7-1 result {}", day_seven_result_1);
 }
