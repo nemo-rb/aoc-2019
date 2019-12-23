@@ -48,7 +48,7 @@ fn read_image(filename: &str) -> Result<Vec<Vec<u32>>, Error> {
 }
 
 
-fn verify_image(layers: &Vec<Vec<u32>>) -> usize {
+fn verify_image(layers: &[Vec<u32>]) -> usize {
     let minimum = layers
                     .iter()
                     .min_by_key(|layer|
@@ -60,7 +60,7 @@ fn verify_image(layers: &Vec<Vec<u32>>) -> usize {
 }
 
 
-fn count_values(input: &Vec<u32>, to_count: u32) -> usize {
+fn count_values(input: &[u32], to_count: u32) -> usize {
     input
     .iter()
     .filter(|&c| *c == to_count)
