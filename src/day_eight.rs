@@ -1,3 +1,4 @@
+use std::cmp;
 use std::fs::File;
 use std::io::{BufRead, BufReader, Error};
 
@@ -22,6 +23,27 @@ pub fn run_1() -> Option<usize> {
     let filename = "input/day_eight.txt";
     let image = read_image(filename).unwrap();
     Some(verify_image(&image))
+}
+
+
+pub fn run_2() -> Option<usize> {
+    let filename = "input/day_eight.txt";
+    let image = read_image(filename).unwrap();
+    let decoded = decode_image(&image);
+
+    for (i, p) in decoded.iter().enumerate() {
+        if *p == 0 {
+            print!("  ");
+            continue;
+        }
+        if i != 0 && i % 25 == 0 {
+            println!();
+        }
+        print!("{} ", p);
+    }
+    println!();
+
+    Some(0)
 }
 
 
@@ -65,4 +87,21 @@ fn count_values(input: &[u32], to_count: u32) -> usize {
     .iter()
     .filter(|&c| *c == to_count)
     .count()
+}
+
+
+fn decode_image(layers: &[Vec<u32>]) -> [u32; 150] {
+    let mut decoded: [u32; 25 * 6] = [2; 25 * 6];
+
+    for layer in layers {
+        for (i, p) in layer.iter().enumerate() {
+            if decoded[i] != 2 {
+                continue;
+            }
+
+            decoded[i] = cmp::min(*p, decoded[i]);
+        }
+    }
+
+    decoded
 }
