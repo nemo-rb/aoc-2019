@@ -26,24 +26,11 @@ pub fn run_1() -> Option<usize> {
 }
 
 
-pub fn run_2() -> Option<usize> {
+pub fn run_2() {
     let filename = "input/day_eight.txt";
     let image = read_image(filename).unwrap();
     let decoded = decode_image(&image);
-
-    for (i, p) in decoded.iter().enumerate() {
-        if *p == 0 {
-            print!("  ");
-            continue;
-        }
-        if i != 0 && i % 25 == 0 {
-            println!();
-        }
-        print!("{} ", p);
-    }
-    println!();
-
-    Some(0)
+    print_image(&decoded);
 }
 
 
@@ -104,4 +91,19 @@ fn decode_image(layers: &[Vec<u32>]) -> [u32; 150] {
     }
 
     decoded
+}
+
+
+fn print_image(decoded: &[u32; 150]) {
+    for (i, p) in decoded.iter().enumerate() {
+        if *p == 0 {
+            print!("  ");
+            continue;
+        }
+        if i != 0 && i % 25 == 0 {
+            println!();
+        }
+        print!("{} ", p);
+    }
+    println!();
 }
