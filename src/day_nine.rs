@@ -29,7 +29,7 @@ mod test_nine {
     #[test]
     fn test_input() {
         let mut computer = Computer { pc: 0, relative_base: 0,
-                                      memory: vec![109,988,209,12,9,1000,209,6,209,3,203,0,204,0, 99] };
+                                      memory: vec![109, 988, 209, 12, 9, 1000, 209, 6, 209, 3, 203, 0, 204, 0, 99] };
         assert_eq!(
             1, computer.run([1].to_vec()).unwrap()
         )
@@ -131,17 +131,17 @@ impl Computer {
                     self.pc += 2;
                 },
                 5 => {
-                    self.pc = if 0 == first {
-                        self.pc + 3
+                    if 0 == first {
+                        self.pc += 3;
                     } else {
-                        second
+                        self.pc = second;
                     }
                 },
                 6 => {
-                    self.pc = if 0 == first {
-                        second
+                    if 0 == first {
+                        self.pc = second;
                     } else {
-                        self.pc + 3
+                        self.pc += 3;
                     }
                 },
                 7 => {
